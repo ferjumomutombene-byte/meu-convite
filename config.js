@@ -9,7 +9,7 @@ const CONFIG = {
     noivo: {
       nomeCurto: "Zefanias",
       nomeCompleto: "Zefanias Aurélio Massinga",
-      foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop", // Substituir por foto real
+      foto: "assets/foto-noivo.jpg", // Substituir por foto real
       pais: {
         pai: "Zefanias Aurélio Massinga",
         paiEmMemoria: false,
@@ -20,7 +20,7 @@ const CONFIG = {
     noiva: {
       nomeCurto: "Helena",
       nomeCompleto: "Helena Santos",
-      foto: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop", // Substituir por foto real
+      foto: "assets/foto-noiva.jpg", // Substituir por foto real
       pais: {
         pai: "António Santos",
         paiEmMemoria: false,
@@ -29,7 +29,7 @@ const CONFIG = {
       }
     },
     monograma: "Z & H",
-    fotoHero: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920&auto=format&fit=crop"
+    fotoHero: "assets/foto-hero.jpg"
   },
 
   // --- DATA E HORA DO EVENTO PRINCIPAL ---
@@ -85,10 +85,11 @@ const CONFIG = {
 
   // --- GALERIA DE FOTOS ---
   galeria: [
-    "https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=800&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800&auto=format&fit=crop"
+    "assets/foto-1.jpg",
+    "assets/foto-2.jpg",
+    "assets/foto-3.jpg",
+    "assets/foto-4.jpg",
+    "assets/foto-5.jpg"
   ],
 
   // --- MULTIMÉDIA E RSVP ---
