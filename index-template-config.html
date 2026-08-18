@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de Casamento</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style-template-config.css">
+</head>
+<body>
+
+  <audio id="audio-fundo" loop></audio>
+  <button id="btn-musica" class="btn-musica" aria-label="Música">🎵</button>
+
+  <div id="tela-abertura">
+    <div class="subtitulo">Sua Presença é Esperada</div>
+    <h1 id="monograma-abertura" class="fonte-titulo" style="font-size: 4rem; margin: 20px 0;">Z & H</h1>
+    <p id="data-abertura" style="margin-bottom: 30px; letter-spacing: 2px;"></p>
+    <button id="btn-abrir" class="botao-primario">Abrir Convite ✨</button>
+  </div>
+
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-conteudo reveal">
+      <div class="subtitulo" style="color: #fff;">Convidamo-lo para o nosso casamento</div>
+      <h1 id="nomes-hero"></h1>
+      <p id="data-hero" style="font-size: 1.2rem; letter-spacing: 2px;"></p>
+    </div>
+  </header>
+
+  <section class="reveal">
+    <div class="citacao-container">
+      <p id="citacao-abertura-texto" class="citacao-texto"></p>
+      <div id="citacao-abertura-ref" class="citacao-autor"></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="citacao-container" style="border: none;">
+      <p id="citacao-inspiradora-texto" class="citacao-texto" style="font-size: 1.3rem;"></p>
+      <div id="citacao-inspiradora-autor" class="citacao-autor"></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">Os Noivos</div>
+    <h2 class="titulo-seccao">Quem Diz o "Sim"</h2>
+    <div class="noivos-grid">
+      <div class="cartao-noivo">
+        <img id="foto-noivo" src="" alt="Noivo">
+        <h3 id="nome-noivo"></h3>
+        <p id="pais-noivo" class="pais-noivo"></p>
+      </div>
+      <div class="cartao-noivo">
+        <img id="foto-noiva" src="" alt="Noiva">
+        <h3 id="nome-noiva"></h3>
+        <p id="pais-noiva" class="pais-noivo"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2 id="titulo-mensagem" class="titulo-seccao"></h2>
+    <p id="texto-mensagem" style="max-width: 650px; margin: 0 auto 15px auto;"></p>
+    <p id="nota-lugares" style="font-weight: 600; color: var(--cor-secundaria);"></p>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">Guarde a Data</div>
+    <h2 class="titulo-seccao">Calendário</h2>
+    <div class="calendario-box">
+      <div id="cal-titulo" class="cal-header"></div>
+      <div class="cal-dias-semana">
+        <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+      </div>
+      <div id="cal-grid" class="cal-dias" style="margin-top: 10px;"></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">O Grande Dia</div>
+    <h2 class="titulo-seccao">Programação</h2>
+    <div id="timeline-container" class="timeline"></div>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">Falta Pouco</div>
+    <h2 class="titulo-seccao">Contagem Regressiva</h2>
+    <div class="contagem-grid">
+      <div class="bloco-tempo"><div id="dias" class="valor">0</div><div class="rotulo">Dias</div></div>
+      <div class="bloco-tempo"><div id="horas" class="valor">0</div><div class="rotulo">Horas</div></div>
+      <div class="bloco-tempo"><div id="minutos" class="valor">0</div><div class="rotulo">Minutos</div></div>
+      <div class="bloco-tempo"><div id="segundos" class="valor">0</div><div class="rotulo">Segundos</div></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">Nossa História</div>
+    <h2 class="titulo-seccao">Galeria de Fotos</h2>
+    <div id="galeria-container" class="galeria-grid"></div>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">Confirmação</div>
+    <h2 class="titulo-seccao">Confirmar Presença</h2>
+    <p style="margin-bottom: 20px;">Por favor, confirme a sua presença até ao dia <strong id="data-limite-rsvp"></strong>.</p>
+    <button id="btn-rsvp" class="botao-primario">Confirmar via WhatsApp 📱</button>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">Mural do Casal</div>
+    <h2 class="titulo-seccao">Deixe a sua Mensagem</h2>
+    <form id="form-mural" class="form-mural">
+      <input type="text" id="mural-nome" placeholder="Seu Nome" required>
+      <select id="mural-relacao" required>
+        <option value="" disabled selected>Sua relação com os noivos</option>
+        <option value="Família">Família</option>
+        <option value="Amigo(a)">Amigo(a)</option>
+        <option value="Colega">Colega</option>
+        <option value="Padrinho / Madrinha">Padrinho / Madrinha</option>
+        <option value="Convidado Especial">Convidado Especial</option>
+        <option value="Outro">Outro</option>
+      </select>
+      <textarea id="mural-texto" rows="4" placeholder="Escreva uma mensagem carinhosa..." required></textarea>
+      <button type="submit" class="botao-primario">Enviar Mensagem</button>
+    </form>
+    <div id="lista-mensagens" class="lista-mensagens"></div>
+  </section>
+
+  <section class="reveal">
+    <div class="subtitulo">Lista de Casamento</div>
+    <h2 class="titulo-seccao">Sugestões de Presentes</h2>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <button id="btn-presente-monetario" class="botao-primario">Presente Monetário 💳</button>
+      <button id="btn-presente-materiais" class="botao-primario" style="background-color: var(--cor-primaria);">Lista de Presentes 🎁</button>
+    </div>
+  </section>
+
+  <div id="modal-monetario" class="modal">
+    <div class="modal-conteudo">
+      <button class="fechar-modal">&times;</button>
+      <h3 class="fonte-titulo" style="font-size: 1.8rem; margin-bottom: 15px;">Dados de Pagamento</h3>
+      <div id="dados-monetarios"></div>
+    </div>
+  </div>
+
+  <div id="modal-materiais" class="modal">
+    <div class="modal-conteudo">
+      <button class="fechar-modal">&times;</button>
+      <h3 class="fonte-titulo" style="font-size: 1.8rem; margin-bottom: 15px;">Loja Parceira</h3>
+      <div id="dados-materiais"></div>
+    </div>
+  </div>
+
+  <footer>
+    <h2 id="monograma-rodape" class="fonte-titulo" style="color: #fff; font-size: 2.5rem;"></h2>
+    <p style="margin: 10px 0;">Obrigado por fazer parte da nossa história!</p>
+    <div id="creditos-marca" style="font-size: 0.85rem; opacity: 0.8; margin-top: 20px;"></div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app-template-config.js"></script>
+</body>
+</html>
